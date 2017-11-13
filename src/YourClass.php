@@ -1,4 +1,4 @@
-<?php namespace AhorroLibre\ST;
+<?php namespace AhorroLibre\STP;
 
 /**
 *  A sample class
