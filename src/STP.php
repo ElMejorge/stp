@@ -1,19 +1,24 @@
-<?php namespace AhorroLibre\STP;
+<?php
+
+namespace AhorroLibre\STP;
 
 /**
 *  A sample class
 *
 *  Use this section to define what this class is doing, the PHPDocumentator will use this
 *  to automatically generate an API documentation using this information.
-*
-*  @author yourname
 */
-class YourClass{
+class STP{
 
    /**  @var string $m_SampleProperty define here what this variable is for, do this for every instance variable */
    private $m_SampleProperty = '';
- 
-  /**
+
+   function __construct()
+   {
+//       $this->client = new \SoapClient();
+   }
+
+    /**
   * Sample method 
   *
   * Always create a corresponding docblock for each method, describing what it is for,
