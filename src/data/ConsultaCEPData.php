@@ -22,7 +22,7 @@ class ConsultaCEPData
     /** @var string */
     private $beneficiaryAccountNumber;
 
-    /** @var DateTime */
+    /** @var \DateTime */
     private $paymentDate;
 
     /** @var float */
