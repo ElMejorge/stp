@@ -2,7 +2,7 @@
 include('./lib/STPServices.php');
 
 $data = new OrdenPago();
-$data->set_empresa(\Config::get('stp.pem-file'));
+$data->set_empresa("AHORRO_LIBRE");
 $data->set_claveRastreo("IACH0OEE80003");
 $data->set_conceptoPago("SWI_SPEI_Payment");
 $data->set_cuentaBeneficiario("110180077000000018");
@@ -20,8 +20,8 @@ $data->set_rfcCurpBeneficiario("RFCBEN");
 $data->set_rfcCurpOrdenante("RFCORD");
 $data->set_tipoCuentaOrdenante(3);
 
-$pemFile = \Config::get('stp.pem-file');
-$passphrase = \Config::get('stp.pem-password');
+$pemFile = "/Users/macbook/Downloads/STP/Examples/PHP/prueba-key.pem";
+$passphrase = "12345678";
 
 registraOrden($data, $pemFile, $passphrase);
 ?>
