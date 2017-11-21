@@ -2,137 +2,399 @@
 
 namespace AhorroLibre\STP\Data;
 
-/**
- * Created by PhpStorm.
- * User: macbook
- * Date: 11/21/17
- * Time: 11:55 AM
- */
 class ConsultaCEPData
 {
-    /** @var int */
-    private $beneficiaryBankId;
-
-    /** @var int */
-    private $applicantBankId;
+    /** @var string */
+    private $conceptoPago;
 
     /** @var string */
-    private $searchCode;
+    private $cuentaBeneficiario;
 
     /** @var string */
-    private $beneficiaryAccountNumber;
+    private $cuentaOrdenante;
 
-    /** @var \DateTime */
-    private $paymentDate;
+    /** @var string */
+    private $hora;
 
     /** @var float */
-    private $amount;
+    private $monto;
+
+    /** @var string */
+    private $nombreBeneficiario;
+
+    /** @var string */
+    private $nombreInstBeneficiaria;
+
+    /** @var string */
+    private $nombreInstOrdenante;
+
+    /** @var string */
+    private $selloDigital;
+
+    /** @var string */
+    private $serieCertificado;
+
+    /** @var string */
+    private $tipoOperacion;
+
+    /** @var int */
+    private $tipoPago;
+
+    /** @var string */
+    private $estadoConsulta;
+
+    /** @var string */
+    private $fechaCaptura;
+
+    /** @var string */
+    private $fechaOperacion;
+
+    /** @var float */
+    private $iva;
+
+    /** @var string */
+    private $nombreOrdenante;
+
+    /** @var string */
+    private $referenciaNumerica;
+
+    /** @var string */
+    private $rfcCurpBeneficiario;
+
+    /** @var string */
+    private $rfcCurpOrdenante;
 
     /**
-     * @return int
+     * @return string
      */
-    public function getBeneficiaryBankId(): int
+    public function getConceptoPago(): string
     {
-        return $this->beneficiaryBankId;
+        return $this->conceptoPago;
     }
 
     /**
-     * @param int $beneficiaryBankId
-     * @return ConsultaCEPData
+     * @param string $conceptoPago
      */
-    public function setBeneficiaryBankId(int $beneficiaryBankId): ConsultaCEPData
+    public function setConceptoPago(string $conceptoPago)
     {
-        $this->beneficiaryBankId = $beneficiaryBankId;
-        return $this;
-    }
-
-    /**
-     * @return int
-     */
-    public function getApplicantBankId(): int
-    {
-        return $this->applicantBankId;
-    }
-
-    /**
-     * @param int $applicantBankId
-     * @return ConsultaCEPData
-     */
-    public function setApplicantBankId(int $applicantBankId): ConsultaCEPData
-    {
-        $this->applicantBankId = $applicantBankId;
-        return $this;
+        $this->conceptoPago = $conceptoPago;
     }
 
     /**
      * @return string
      */
-    public function getSearchCode(): string
+    public function getCuentaBeneficiario(): string
     {
-        return $this->searchCode;
+        return $this->cuentaBeneficiario;
     }
 
     /**
-     * @param string $searchCode
-     * @return ConsultaCEPData
+     * @param string $cuentaBeneficiario
      */
-    public function setSearchCode(string $searchCode): ConsultaCEPData
+    public function setCuentaBeneficiario(string $cuentaBeneficiario)
     {
-        $this->searchCode = $searchCode;
-        return $this;
+        $this->cuentaBeneficiario = $cuentaBeneficiario;
     }
 
     /**
      * @return string
      */
-    public function getBeneficiaryAccountNumber(): string
+    public function getCuentaOrdenante(): string
     {
-        return $this->beneficiaryAccountNumber;
+        return $this->cuentaOrdenante;
     }
 
     /**
-     * @param string $beneficiaryAccountNumber
-     * @return ConsultaCEPData
+     * @param string $cuentaOrdenante
      */
-    public function setBeneficiaryAccountNumber(string $beneficiaryAccountNumber): ConsultaCEPData
+    public function setCuentaOrdenante(string $cuentaOrdenante)
     {
-        $this->beneficiaryAccountNumber = $beneficiaryAccountNumber;
-        return $this;
+        $this->cuentaOrdenante = $cuentaOrdenante;
     }
 
     /**
-     * @return DateTime
+     * @return string
      */
-    public function getPaymentDate(): DateTime
+    public function getHora(): string
     {
-        return $this->paymentDate;
+        return $this->hora;
     }
 
     /**
-     * @param DateTime $paymentDate
-     * @return ConsultaCEPData
+     * @param string $hora
      */
-    public function setPaymentDate(DateTime $paymentDate): ConsultaCEPData
+    public function setHora(string $hora)
     {
-        $this->paymentDate = $paymentDate;
-        return $this;
+        $this->hora = $hora;
     }
 
     /**
      * @return float
      */
-    public function getAmount(): float
+    public function getMonto(): float
     {
-        return $this->amount;
+        return $this->monto;
     }
 
     /**
-     * @param float $amount
+     * @param float $monto
+     */
+    public function setMonto(float $monto)
+    {
+        $this->monto = $monto;
+    }
+
+    /**
+     * @return string
+     */
+    public function getNombreBeneficiario(): string
+    {
+        return $this->nombreBeneficiario;
+    }
+
+    /**
+     * @param string $nombreBeneficiario
+     */
+    public function setNombreBeneficiario(string $nombreBeneficiario)
+    {
+        $this->nombreBeneficiario = $nombreBeneficiario;
+    }
+
+    /**
+     * @return string
+     */
+    public function getNombreInstBeneficiaria(): string
+    {
+        return $this->nombreInstBeneficiaria;
+    }
+
+    /**
+     * @param string $nombreInstBeneficiaria
+     */
+    public function setNombreInstBeneficiaria(string $nombreInstBeneficiaria)
+    {
+        $this->nombreInstBeneficiaria = $nombreInstBeneficiaria;
+    }
+
+    /**
+     * @return string
+     */
+    public function getNombreInstOrdenante(): string
+    {
+        return $this->nombreInstOrdenante;
+    }
+
+    /**
+     * @param string $nombreInstOrdenante
+     */
+    public function setNombreInstOrdenante(string $nombreInstOrdenante)
+    {
+        $this->nombreInstOrdenante = $nombreInstOrdenante;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSelloDigital(): string
+    {
+        return $this->selloDigital;
+    }
+
+    /**
+     * @param string $selloDigital
+     */
+    public function setSelloDigital(string $selloDigital)
+    {
+        $this->selloDigital = $selloDigital;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSerieCertificado(): string
+    {
+        return $this->serieCertificado;
+    }
+
+    /**
+     * @param string $serieCertificado
+     */
+    public function setSerieCertificado(string $serieCertificado)
+    {
+        $this->serieCertificado = $serieCertificado;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTipoOperacion(): string
+    {
+        return $this->tipoOperacion;
+    }
+
+    /**
+     * @param string $tipoOperacion
+     */
+    public function setTipoOperacion(string $tipoOperacion)
+    {
+        $this->tipoOperacion = $tipoOperacion;
+    }
+
+    /**
+     * @return int
+     */
+    public function getTipoPago(): int
+    {
+        return $this->tipoPago;
+    }
+
+    /**
+     * @param int $tipoPago
+     */
+    public function setTipoPago(int $tipoPago)
+    {
+        $this->tipoPago = $tipoPago;
+    }
+
+    /**
+     * @return string
+     */
+    public function getEstadoConsulta(): string
+    {
+        return $this->estadoConsulta;
+    }
+
+    /**
+     * @param string $estadoConsulta
+     */
+    public function setEstadoConsulta(string $estadoConsulta)
+    {
+        $this->estadoConsulta = $estadoConsulta;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getFechaCaptura(): ?string
+    {
+        return $this->fechaCaptura;
+    }
+
+    /**
+     * @param string $fechaCaptura
      * @return ConsultaCEPData
      */
-    public function setAmount(float $amount): ConsultaCEPData
+    public function setFechaCaptura(?string $fechaCaptura): ConsultaCEPData
     {
-        $this->amount = $amount;
+        $this->fechaCaptura = $fechaCaptura;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getFechaOperacion(): ?string
+    {
+        return $this->fechaOperacion;
+    }
+
+    /**
+     * @param string $fechaOperacion
+     * @return ConsultaCEPData
+     */
+    public function setFechaOperacion(?string $fechaOperacion): ConsultaCEPData
+    {
+        $this->fechaOperacion = $fechaOperacion;
+        return $this;
+    }
+
+    /**
+     * @return float|null
+     */
+    public function getIva(): ?float
+    {
+        return $this->iva;
+    }
+
+    /**
+     * @param float $iva
+     * @return ConsultaCEPData
+     */
+    public function setIva(?float $iva): ConsultaCEPData
+    {
+        $this->iva = $iva;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getNombreOrdenante(): ?string
+    {
+        return $this->nombreOrdenante;
+    }
+
+    /**
+     * @param string $nombreOrdenante
+     * @return ConsultaCEPData
+     */
+    public function setNombreOrdenante(?string $nombreOrdenante): ConsultaCEPData
+    {
+        $this->nombreOrdenante = $nombreOrdenante;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getReferenciaNumerica(): ?string
+    {
+        return $this->referenciaNumerica;
+    }
+
+    /**
+     * @param string $referenciaNumerica
+     * @return ConsultaCEPData
+     */
+    public function setReferenciaNumerica(?string $referenciaNumerica): ConsultaCEPData
+    {
+        $this->referenciaNumerica = $referenciaNumerica;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getRfcCurpBeneficiario(): ?string
+    {
+        return $this->rfcCurpBeneficiario;
+    }
+
+    /**
+     * @param string $rfcCurpBeneficiario
+     * @return ConsultaCEPData
+     */
+    public function setRfcCurpBeneficiario(string $rfcCurpBeneficiario): ConsultaCEPData
+    {
+        $this->rfcCurpBeneficiario = $rfcCurpBeneficiario;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getRfcCurpOrdenante(): ?string
+    {
+        return $this->rfcCurpOrdenante;
+    }
+
+    /**
+     * @param string $rfcCurpOrdenante
+     * @return ConsultaCEPData
+     */
+    public function setRfcCurpOrdenante(?string $rfcCurpOrdenante): ConsultaCEPData
+    {
+        $this->rfcCurpOrdenante = $rfcCurpOrdenante;
         return $this;
     }
 }

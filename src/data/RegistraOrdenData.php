@@ -2,284 +2,425 @@
 
 namespace AhorroLibre\STP\Data;
 
-/**
- * Created by PhpStorm.
- * User: macbook
- * Date: 11/21/17
- * Time: 11:23 AM
- */
-class registraOrdenData
+class RegistraOrdenData
 {
     /** @var string */
-    private $beneficiaryAccountNumber;
+    private $cuentaBeneficiario;
 
     /** @var string */
-    private $beneficiaryName;
+    private $cuentaOrdenante;
 
     /** @var string */
-    private $beneficiaryRFC;
+    private $emailBeneficiario;
+
+    /** @var string */
+    private $fechaOperacion;
+
+    /** @var string */
+    private $folioOrigen;
+
+    /** @var string */
+    private $nombreBeneficiario;
+
+    /** @var string */
+    private $nombreOrdenante;
+
+    /** @var string */
+    private $rfcCurpBeneficiario;
+
+    /** @var string */
+    private $rfcCurpOrdenante;
 
     /** @var int */
-    private $beneficiaryAccountType;
-
-    /** @var string */
-    private $searchCode;
-
-    /** @var string */
-    private $paymentDescription;
-
-    /** @var string */
-    private $companyName;
-
-    /** @var string */
-    private $signature;
+    private $tipoCuentaBeneficiario;
 
     /** @var int */
-    private $beneficiaryBankId;
+    private $tipoCuentaOrdenante;
+
+    /** @var string */
+    private $claveRastreo;
+
+    /** @var string */
+    private $conceptoPago;
+
+    /** @var string */
+    private $empresa;
+
+    /** @var string */
+    private $firma;
 
     /** @var int */
-    private $applicantBankId;
+    private $institucionOperante;
+
+    /** @var int */
+    private $institucionContraparte;
 
     /** @var float */
-    private $amount;
+    private $monto;
 
     /** @var int */
-    private $referenceNumber;
+    private $referenciaNumerica;
 
     /** @var int */
-    private $paymentType;
+    private $tipoPago;
 
     /**
      * @return string
      */
-    public function getBeneficiaryAccountNumber(): string
+    public function getCuentaBeneficiario(): string
     {
-        return $this->beneficiaryAccountNumber;
+        return $this->cuentaBeneficiario;
     }
 
     /**
-     * @param string $beneficiaryAccountNumber
-     * @return registraOrdenData
+     * @param string $cuentaBeneficiario
+     * @return RegistraOrdenData
      */
-    public function setBeneficiaryAccountNumber(string $beneficiaryAccountNumber): registraOrdenData
+    public function setCuentaBeneficiario(string $cuentaBeneficiario): RegistraOrdenData
     {
-        $this->beneficiaryAccountNumber = $beneficiaryAccountNumber;
+        $this->cuentaBeneficiario = $cuentaBeneficiario;
         return $this;
     }
 
     /**
      * @return string
      */
-    public function getBeneficiaryName(): string
+    public function getNombreBeneficiario(): string
     {
-        return $this->beneficiaryName;
+        return $this->nombreBeneficiario;
     }
 
     /**
-     * @param string $beneficiaryName
-     * @return registraOrdenData
+     * @param string $nombreBeneficiario
+     * @return RegistraOrdenData
      */
-    public function setBeneficiaryName(string $beneficiaryName): registraOrdenData
+    public function setNombreBeneficiario(string $nombreBeneficiario): RegistraOrdenData
     {
-        $this->beneficiaryName = $beneficiaryName;
+        $this->nombreBeneficiario = $nombreBeneficiario;
         return $this;
     }
 
     /**
      * @return string
      */
-    public function getBeneficiaryRFC(): string
+    public function getRfcCurpBeneficiario(): string
     {
-        return $this->beneficiaryRFC;
+        return $this->rfcCurpBeneficiario;
     }
 
     /**
-     * @param string $beneficiaryRFC
-     * @return registraOrdenData
+     * @param string $rfcCurpBeneficiario
+     * @return RegistraOrdenData
      */
-    public function setBeneficiaryRFC(string $beneficiaryRFC): registraOrdenData
+    public function setRfcCurpBeneficiario(string $rfcCurpBeneficiario): RegistraOrdenData
     {
-        $this->beneficiaryRFC = $beneficiaryRFC;
+        $this->rfcCurpBeneficiario = $rfcCurpBeneficiario;
         return $this;
     }
 
     /**
      * @return int
      */
-    public function getBeneficiaryAccountType(): int
+    public function getTipoCuentaBeneficiario(): int
     {
-        return $this->beneficiaryAccountType;
+        return $this->tipoCuentaBeneficiario;
     }
 
     /**
-     * @param int $beneficiaryAccountType
-     * @return registraOrdenData
+     * @param int $tipoCuentaBeneficiario
+     * @return RegistraOrdenData
      */
-    public function setBeneficiaryAccountType(int $beneficiaryAccountType): registraOrdenData
+    public function setTipoCuentaBeneficiario(int $tipoCuentaBeneficiario): RegistraOrdenData
     {
-        $this->beneficiaryAccountType = $beneficiaryAccountType;
+        $this->tipoCuentaBeneficiario = $tipoCuentaBeneficiario;
         return $this;
     }
 
     /**
      * @return string
      */
-    public function getSearchCode(): string
+    public function getClaveRastreo(): string
     {
-        return $this->searchCode;
+        return $this->claveRastreo;
     }
 
     /**
-     * @param string $searchCode
-     * @return registraOrdenData
+     * @param string $claveRastreo
+     * @return RegistraOrdenData
      */
-    public function setSearchCode(string $searchCode): registraOrdenData
+    public function setClaveRastreo(string $claveRastreo): RegistraOrdenData
     {
-        $this->searchCode = $searchCode;
+        $this->claveRastreo = $claveRastreo;
         return $this;
     }
 
     /**
      * @return string
      */
-    public function getPaymentDescription(): string
+    public function getConceptoPago(): string
     {
-        return $this->paymentDescription;
+        return $this->conceptoPago;
     }
 
     /**
-     * @param string $paymentDescription
-     * @return registraOrdenData
+     * @param string $conceptoPago
+     * @return RegistraOrdenData
      */
-    public function setPaymentDescription(string $paymentDescription): registraOrdenData
+    public function setConceptoPago(string $conceptoPago): RegistraOrdenData
     {
-        $this->paymentDescription = $paymentDescription;
+        $this->conceptoPago = $conceptoPago;
         return $this;
     }
 
     /**
      * @return string
      */
-    public function getCompanyName(): string
+    public function getEmpresa(): string
     {
-        return $this->companyName;
+        return $this->empresa;
     }
 
     /**
-     * @param string $companyName
-     * @return registraOrdenData
+     * @param string $empresa
+     * @return RegistraOrdenData
      */
-    public function setCompanyName(string $companyName): registraOrdenData
+    public function setEmpresa(string $empresa): RegistraOrdenData
     {
-        $this->companyName = $companyName;
+        $this->empresa = $empresa;
         return $this;
     }
 
     /**
      * @return string
      */
-    public function getSignature(): string
+    public function getFirma(): string
     {
-        return $this->signature;
+        return $this->firma;
     }
 
     /**
-     * @param string $signature
-     * @return registraOrdenData
+     * @param string $firma
+     * @return RegistraOrdenData
      */
-    public function setSignature(string $signature): registraOrdenData
+    public function setFirma(string $firma): RegistraOrdenData
     {
-        $this->signature = $signature;
+        $this->firma = $firma;
         return $this;
     }
 
     /**
      * @return int
      */
-    public function getBeneficiaryBankId(): int
+    public function getInstitucionOperante(): int
     {
-        return $this->beneficiaryBankId;
+        return $this->institucionOperante;
     }
 
     /**
-     * @param int $beneficiaryBankId
-     * @return registraOrdenData
+     * @param int $institucionOperante
+     * @return RegistraOrdenData
      */
-    public function setBeneficiaryBankId(int $beneficiaryBankId): registraOrdenData
+    public function setInstitucionOperante(int $institucionOperante): RegistraOrdenData
     {
-        $this->beneficiaryBankId = $beneficiaryBankId;
+        $this->institucionOperante = $institucionOperante;
         return $this;
     }
 
     /**
      * @return int
      */
-    public function getApplicantBankId(): int
+    public function getInstitucionContraparte(): int
     {
-        return $this->applicantBankId;
+        return $this->institucionContraparte;
     }
 
     /**
-     * @param int $applicantBankId
-     * @return registraOrdenData
+     * @param int $institucionContraparte
+     * @return RegistraOrdenData
      */
-    public function setApplicantBankId(int $applicantBankId): registraOrdenData
+    public function setInstitucionContraparte(int $institucionContraparte): RegistraOrdenData
     {
-        $this->applicantBankId = $applicantBankId;
+        $this->institucionContraparte = $institucionContraparte;
         return $this;
     }
 
     /**
      * @return float
      */
-    public function getAmount(): float
+    public function getMonto(): float
     {
-        return $this->amount;
+        return $this->monto;
     }
 
     /**
-     * @param float $amount
-     * @return registraOrdenData
+     * @param float $monto
+     * @return RegistraOrdenData
      */
-    public function setAmount(float $amount): registraOrdenData
+    public function setMonto(float $monto): RegistraOrdenData
     {
-        $this->amount = $amount;
+        $this->monto = $monto;
         return $this;
     }
 
     /**
      * @return int
      */
-    public function getReferenceNumber(): int
+    public function getReferenciaNumerica(): int
     {
-        return $this->referenceNumber;
+        return $this->referenciaNumerica;
     }
 
     /**
-     * @param int $referenceNumber
-     * @return registraOrdenData
+     * @param int $referenciaNumerica
+     * @return RegistraOrdenData
      */
-    public function setReferenceNumber(int $referenceNumber): registraOrdenData
+    public function setReferenciaNumerica(int $referenciaNumerica): RegistraOrdenData
     {
-        $this->referenceNumber = $referenceNumber;
+        $this->referenciaNumerica = $referenciaNumerica;
         return $this;
     }
 
     /**
      * @return int
      */
-    public function getPaymentType(): int
+    public function getTipoPago(): int
     {
-        return $this->paymentType;
+        return $this->tipoPago;
     }
 
     /**
-     * @param int $paymentType
-     * @return registraOrdenData
+     * @param int $tipoPago
+     * @return RegistraOrdenData
      */
-    public function setPaymentType(int $paymentType): registraOrdenData
+    public function setTipoPago(int $tipoPago): RegistraOrdenData
     {
-        $this->paymentType = $paymentType;
+        $this->tipoPago = $tipoPago;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getCuentaOrdenante(): ?string
+    {
+        return $this->cuentaOrdenante;
+    }
+
+    /**
+     * @param string $cuentaOrdenante
+     * @return RegistraOrdenData
+     */
+    public function setCuentaOrdenante(?string $cuentaOrdenante): RegistraOrdenData
+    {
+        $this->cuentaOrdenante = $cuentaOrdenante;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getEmailBeneficiario(): ?string
+    {
+        return $this->emailBeneficiario;
+    }
+
+    /**
+     * @param string $emailBeneficiario
+     * @return RegistraOrdenData
+     */
+    public function setEmailBeneficiario(?string $emailBeneficiario): RegistraOrdenData
+    {
+        $this->emailBeneficiario = $emailBeneficiario;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getFechaOperacion(): ?string
+    {
+        return $this->fechaOperacion;
+    }
+
+    /**
+     * @param string $fechaOperacion
+     * @return RegistraOrdenData
+     */
+    public function setFechaOperacion(?string $fechaOperacion): RegistraOrdenData
+    {
+        $this->fechaOperacion = $fechaOperacion;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getFolioOrigen(): ?string
+    {
+        return $this->folioOrigen;
+    }
+
+    /**
+     * @param string $folioOrigen
+     * @return RegistraOrdenData
+     */
+    public function setFolioOrigen(?string $folioOrigen): RegistraOrdenData
+    {
+        $this->folioOrigen = $folioOrigen;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getNombreOrdenante(): ?string
+    {
+        return $this->nombreOrdenante;
+    }
+
+    /**
+     * @param string $nombreOrdenante
+     * @return RegistraOrdenData
+     */
+    public function setNombreOrdenante(string $nombreOrdenante): RegistraOrdenData
+    {
+        $this->nombreOrdenante = $nombreOrdenante;
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getRfcCurpOrdenante(): ?string
+    {
+        return $this->rfcCurpOrdenante;
+    }
+
+    /**
+     * @param string $rfcCurpOrdenante
+     * @return RegistraOrdenData
+     */
+    public function setRfcCurpOrdenante(string $rfcCurpOrdenante): RegistraOrdenData
+    {
+        $this->rfcCurpOrdenante = $rfcCurpOrdenante;
+        return $this;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getTipoCuentaOrdenante(): ?int
+    {
+        return $this->tipoCuentaOrdenante;
+    }
+
+    /**
+     * @param int $tipoCuentaOrdenante
+     * @return RegistraOrdenData
+     */
+    public function setTipoCuentaOrdenante(int $tipoCuentaOrdenante): RegistraOrdenData
+    {
+        $this->tipoCuentaOrdenante = $tipoCuentaOrdenante;
         return $this;
     }
 }

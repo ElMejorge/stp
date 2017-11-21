@@ -23,5 +23,6 @@ $data->set_tipoCuentaOrdenante(3);
 $pemFile = "/Users/macbook/Downloads/STP/Examples/PHP/prueba-key.pem";
 $passphrase = "12345678";
 
+//$pemFile = getcwd() . '/prueba-key.pem';
 registraOrden($data, $pemFile, $passphrase);
 ?>

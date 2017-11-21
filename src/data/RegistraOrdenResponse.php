@@ -2,12 +2,6 @@
 
 namespace AhorroLibre\STP\Data;
 
-/**
- * Created by PhpStorm.
- * User: macbook
- * Date: 11/21/17
- * Time: 11:47 AM
- */
 class RegistraOrdenResponse
 {
     /** @var string */
