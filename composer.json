@@ -18,7 +18,9 @@
     },
 	"autoload": {
         "psr-4": {
-            "AhorroLibre\\STP\\": "src/"
+            "AhorroLibre\\STP\\": "src/",
+            "AhorroLibre\\STP\\Data\\": "src/data",
+            "AhorroLibre\\STP\\Lib": "src/lib"
         }
     }
 }

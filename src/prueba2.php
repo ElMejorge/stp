@@ -1,7 +1,13 @@
 <?php
-include('./lib/STPServices.php');
+
+namespace AhorroLibre\STP;
+
+use AhorroLibre\STP\Lib\OrdenPago;
+use AhorroLibre\STP\Lib\STPService;
+
 
 $data = new OrdenPago();
+
 $data->set_empresa("AHORRO_LIBRE");
 $data->set_claveRastreo("IACH0OEE80003");
 $data->set_conceptoPago("SWI_SPEI_Payment");
@@ -24,5 +30,5 @@ $pemFile = "/Users/macbook/Downloads/STP/Examples/PHP/prueba-key.pem";
 $passphrase = "12345678";
 
 //$pemFile = getcwd() . '/prueba-key.pem';
-registraOrden($data, $pemFile, $passphrase);
-?>
+
+STPService::registraOrden($data, $pemFile, $passphrase);
