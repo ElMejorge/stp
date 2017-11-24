@@ -4,8 +4,8 @@ namespace AhorroLibre\STP;
 
 use AhorroLibre\STP\Data\RegistraOrdenResponse;
 use AhorroLibre\STP\Data\RegistraOrdenData;
-use AhorroLibre\STP\Data\ConsultaCEPData;
 use AhorroLibre\STP\Data\ConsultaCEPResponse;
+use AhorroLibre\STP\Data\ConsultaCEPData;
 use AhorroLibre\STP\Data\ConsultaSaldoCuentaResponse;
 use AhorroLibre\STP\Data\ConsultaSaldoCuentaData;
 
