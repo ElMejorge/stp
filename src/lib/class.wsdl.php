@@ -1,6 +1,6 @@
 <?php
 
-
+namespace AhorroLibre\STP\Lib;
 
 
 /**
@@ -1934,5 +1934,3 @@ class wsdl extends nusoap_base {
 		return true;
 	} 
 }
-
-?>

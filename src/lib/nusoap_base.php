@@ -1,5 +1,7 @@
 <?php
 
+namespace AhorroLibre\STP\Lib;
+
 /*
 $Id: class.nusoap_base.php,v 1.56 2010/04/26 20:15:08 snichol Exp $
 
