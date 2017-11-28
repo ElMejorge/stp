@@ -4,7 +4,7 @@ namespace AhorroLibre\STP\Lib;
 
 use AhorroLibre\STP\Lib\CryptoHandlerSTP;
 use AhorroLibre\STP\Lib\OrdenPago;
-use nusoap_client;
+use AhorroLibre\STP\Lib\nusoap_client;
 
 class STPService
 {
