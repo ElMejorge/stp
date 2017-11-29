@@ -1,0 +1,26 @@
+{
+    "name": "ahorrolibre/stp-ahorrolibre",
+    "description": "STP integration for AhorroLibre backend.",
+    "keywords": ["stp", "ahorrolibre", "package"],
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Jorge Montiel",
+            "email": "jorge@ahorrolibre.com"
+        }
+    ],
+    "type": "project",
+    "require": {
+		"php": ">=5.4"
+    },
+	"require-dev": {
+		"phpunit/phpunit": "5.2.*"
+    },
+	"autoload": {
+        "psr-4": {
+            "AhorroLibre\\STP\\": "src/",
+            "AhorroLibre\\STP\\Data\\": "src/data",
+            "AhorroLibre\\STP\\Lib\\": "src/lib"
+        }
+    }
+}
