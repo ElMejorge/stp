@@ -6,6 +6,7 @@ http://sourceforge.net/projects/nusoap/
 The primary support for NuSOAP is the mailing list:
 nusoap-general@lists.sourceforge.net
 */
+namespace AhorroLibre\STP\Lib;
 
 /**
 * caches instances of the wsdl class
@@ -44,7 +45,7 @@ class nusoap_wsdlcache {
 	* @param integer $cache_lifetime lifetime for caching-files in seconds or 0 for unlimited
 	* @access public
 	*/
-	function nusoap_wsdlcache($cache_dir='.', $cache_lifetime=0) {
+	function __construct($cache_dir='.', $cache_lifetime=0) {
 		$this->fplock = array();
 		$this->cache_dir = $cache_dir != '' ? $cache_dir : '.';
 		$this->cache_lifetime = $cache_lifetime;
@@ -200,10 +201,3 @@ class nusoap_wsdlcache {
 		return $ret;
 	}
 }
-
-/**
- * For backward compatibility
- */
-class wsdlcache extends nusoap_wsdlcache {
-}
-?>

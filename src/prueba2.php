@@ -5,7 +5,6 @@ namespace AhorroLibre\STP;
 use AhorroLibre\STP\Lib\OrdenPago;
 use AhorroLibre\STP\Lib\STPService;
 
-
 $data = new OrdenPago();
 
 $data->set_empresa("AHORRO_LIBRE");

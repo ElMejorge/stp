@@ -1,7 +1,6 @@
 <?php
 
-
-
+namespace AhorroLibre\STP\Lib;
 
 /**
 * Contains information for a SOAP fault.
@@ -45,8 +44,8 @@ class nusoap_fault extends nusoap_base {
     * @param string $faultstring human readable error message
     * @param mixed $faultdetail detail, typically a string or array of string
 	*/
-	function nusoap_fault($faultcode,$faultactor='',$faultstring='',$faultdetail=''){
-		parent::nusoap_base();
+	function __construct($faultcode,$faultactor='',$faultstring='',$faultdetail=''){
+		parent::__construct();
 		$this->faultcode = $faultcode;
 		$this->faultactor = $faultactor;
 		$this->faultstring = $faultstring;
@@ -79,12 +78,3 @@ class nusoap_fault extends nusoap_base {
 		return $return_msg;
 	}
 }
-
-/**
- * Backward compatibility
- */
-class soap_fault extends nusoap_fault {
-}
-
-
-?>
