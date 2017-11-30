@@ -1,7 +1,6 @@
 <?php
 
-
-
+namespace AhorroLibre\STP\Lib;
 
 /**
 * transport class for sending/receiving data via HTTP and HTTPS

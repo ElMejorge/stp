@@ -2,20 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb124d94-308b-4324-ba72-8d4b53d667ff" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lib/nusoap_client_mime.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/lib/nusoap.php" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/lib/class.soap_fault.php" afterPath="$PROJECT_DIR$/src/lib/nusoap_fault.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/lib/class.soap_parser.php" afterPath="$PROJECT_DIR$/src/lib/nusoap_parser.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/lib/class.soap_server.php" afterPath="$PROJECT_DIR$/src/lib/nusoap_server.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/lib/class.soap_transport_http.php" afterPath="$PROJECT_DIR$/src/lib/soap_transport_http.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/lib/class.soap_val.php" afterPath="$PROJECT_DIR$/src/lib/soapval.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/lib/class.wsdl.php" afterPath="$PROJECT_DIR$/src/lib/wsdl.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/lib/class.wsdlcache.php" afterPath="$PROJECT_DIR$/src/lib/nusoap_wsdlcache.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/lib/class.xmlschema.php" afterPath="$PROJECT_DIR$/src/lib/nusoap_xmlschema.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/lib/nusoapmime.php" afterPath="$PROJECT_DIR$/src/lib/nusoap_server_mime.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/nusoap_base.php" afterPath="$PROJECT_DIR$/src/lib/nusoap_base.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/prueba2.php" afterPath="$PROJECT_DIR$/src/prueba2.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/nusoap_client.php" afterPath="$PROJECT_DIR$/src/lib/nusoap_client.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lib/soap_transport_http.php" afterPath="$PROJECT_DIR$/src/lib/soap_transport_http.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,14 +16,12 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="nusoap_server.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lib/nusoap_server.php">
+      <file leaf-file-name="OrdenPago.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lib/OrdenPago.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="1117" column="0" lean-forward="false" selection-start-line="1117" selection-start-column="0" selection-end-line="1117" selection-end-column="0" />
-              <folding>
-                <element signature="e#374#39884#1#PHP" expanded="false" />
-              </folding>
+            <state relative-caret-position="-354">
+              <caret line="4" column="6" lean-forward="false" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -42,8 +29,8 @@
       <file leaf-file-name="soap_transport_http.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lib/soap_transport_http.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="900">
-              <caret line="60" column="29" lean-forward="false" selection-start-line="60" selection-start-column="29" selection-end-line="60" selection-end-column="29" />
+            <state relative-caret-position="30">
+              <caret line="2" column="30" lean-forward="true" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -52,16 +39,24 @@
       <file leaf-file-name="soapval.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lib/soapval.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
+            <state relative-caret-position="1059">
               <caret line="103" column="0" lean-forward="false" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
-              <folding>
-                <element signature="e#522#2327#0#PHP" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wsdl.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="STPServices.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lib/STPServices.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="wsdl.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/lib/wsdl.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
@@ -102,11 +97,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="nusoap_wsdlcache.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="nusoap_wsdlcache.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lib/nusoap_wsdlcache.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="47" column="24" lean-forward="false" selection-start-line="47" selection-start-column="24" selection-end-line="47" selection-end-column="24" />
+            <state relative-caret-position="153">
+              <caret line="18" column="22" lean-forward="false" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nusoap_server.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lib/nusoap_server.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="334">
+              <caret line="210" column="42" lean-forward="false" selection-start-line="210" selection-start-column="29" selection-end-line="210" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -115,23 +120,19 @@
       <file leaf-file-name="nusoap_server_mime.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lib/nusoap_server_mime.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-              <folding>
-                <element signature="e#1755#8040#0#PHP" expanded="false" />
-              </folding>
+            <state relative-caret-position="30">
+              <caret line="38" column="10" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="nusoap_client_mime.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lib/nusoap_client_mime.php">
+      <file leaf-file-name="nusoap_parser.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lib/nusoap_parser.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="265" column="1" lean-forward="false" selection-start-line="265" selection-start-column="1" selection-end-line="265" selection-end-column="1" />
-              <folding>
-                <element signature="e#1755#8098#0#PHP" expanded="false" />
-              </folding>
+            <state relative-caret-position="637">
+              <caret line="58" column="24" lean-forward="false" selection-start-line="58" selection-start-column="13" selection-end-line="58" selection-end-column="24" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -149,21 +150,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="nusoap_parser.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lib/nusoap_parser.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="870">
-              <caret line="58" column="24" lean-forward="false" selection-start-line="58" selection-start-column="13" selection-end-line="58" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>nusoap_client_mime</find>
+      <find>nusoap_server</find>
+      <find>nusoap_wsdlcache</find>
+      <find>nusoap_server_mime</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -186,6 +180,8 @@
         <option value="$PROJECT_DIR$/src/lib/class.xmlschema.php" />
         <option value="$PROJECT_DIR$/src/lib/nusoap_client_mime.php" />
         <option value="$PROJECT_DIR$/src/lib/nusoapmime.php" />
+        <option value="$PROJECT_DIR$/src/lib/nusoap_client.php" />
+        <option value="$PROJECT_DIR$/src/lib/soap_transport_http.php" />
       </list>
     </option>
   </component>
@@ -368,12 +364,12 @@
       <option name="presentableId" value="Default" />
       <updated>1511985486622</updated>
       <workItem from="1511985488021" duration="609000" />
-      <workItem from="1512063717109" duration="1407000" />
+      <workItem from="1512063717109" duration="1744000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2016000" />
+    <option name="totallyTimeSpent" value="2353000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
@@ -419,10 +415,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/OrdenPago.php">
+    <entry file="file://$PROJECT_DIR$/src/lib/nusoap.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-429">
-          <caret line="4" column="6" lean-forward="false" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+        <state relative-caret-position="-170">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/nusoap_client.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="96" column="29" lean-forward="false" selection-start-line="96" selection-start-column="29" selection-end-line="96" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -435,19 +439,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/nusoap_client_mime.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="54" column="24" lean-forward="false" selection-start-line="54" selection-start-column="6" selection-end-line="54" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/lib/nusoap_fault.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
+        <state relative-caret-position="22">
           <caret line="2" column="10" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding>
-            <element signature="e#314#2166#0#PHP" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lib/nusoap_parser.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="870">
+        <state relative-caret-position="637">
           <caret line="58" column="24" lean-forward="false" selection-start-line="58" selection-start-column="13" selection-end-line="58" selection-end-column="24" />
           <folding />
         </state>
@@ -455,29 +465,68 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lib/nusoap_server.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="1117" column="0" lean-forward="false" selection-start-line="1117" selection-start-column="0" selection-end-line="1117" selection-end-column="0" />
+        <state relative-caret-position="334">
+          <caret line="210" column="42" lean-forward="false" selection-start-line="210" selection-start-column="29" selection-end-line="210" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/nusoap_wsdlcache.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="18" column="22" lean-forward="false" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/nusoap_xmlschema.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="22" lean-forward="false" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="22" />
           <folding>
-            <element signature="e#374#39884#1#PHP" expanded="false" />
+            <marker date="1512076680000" expanded="true" signature="31446:31621" ph="..." />
+            <marker date="1512076680000" expanded="true" signature="31798:31930" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/OrdenPago.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-354">
+          <caret line="4" column="6" lean-forward="false" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/nusoap_server_mime.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="38" column="10" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lib/soap_transport_http.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="60" column="29" lean-forward="false" selection-start-line="60" selection-start-column="29" selection-end-line="60" selection-end-column="29" />
+        <state relative-caret-position="30">
+          <caret line="2" column="30" lean-forward="true" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lib/soapval.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
+        <state relative-caret-position="1059">
           <caret line="103" column="0" lean-forward="false" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
-          <folding>
-            <element signature="e#522#2327#0#PHP" expanded="false" />
-          </folding>
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/STPServices.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -517,53 +566,6 @@
             <marker date="1512076680000" expanded="true" signature="35236:35242" ph=" " />
             <marker date="1512076680000" expanded="true" signature="35447:35480" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/nusoap_xmlschema.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="22" lean-forward="false" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="22" />
-          <folding>
-            <marker date="1512076680000" expanded="true" signature="31446:31621" ph="..." />
-            <marker date="1512076680000" expanded="true" signature="31798:31930" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/nusoap_client_mime.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="265" column="1" lean-forward="false" selection-start-line="265" selection-start-column="1" selection-end-line="265" selection-end-column="1" />
-          <folding>
-            <element signature="e#1755#8098#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/nusoap_server_mime.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-          <folding>
-            <element signature="e#1755#8040#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/nusoap.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-170">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/nusoap_wsdlcache.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="47" column="24" lean-forward="false" selection-start-line="47" selection-start-column="24" selection-end-line="47" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
