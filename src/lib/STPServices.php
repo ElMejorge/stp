@@ -15,7 +15,7 @@ class STPService
         $proxyusername = isset($_POST['proxyusername']) ? $_POST['proxyusername'] : '';
         $proxypassword = isset($_POST['proxypassword']) ? $_POST['proxypassword'] : '';
 
-        $wsURL = 'http://demo.stpmex.com:7004/speidemo/webservices/SpeiServices?WSDL';
+        $wsURL =  \Config::get('stp.ip_address') . ':' . \Config::get('stp.port') .  '/speidemo/webservices/SpeiServices?WSDL';
 
         $client = new nusoap_client($wsURL, 'wsdl', $proxyhost, $proxyport, $proxyusername, $proxypassword);
         $client->soap_defencoding = 'UTF-8';
