@@ -9,7 +9,7 @@ use AhorroLibre\STP\Data\ConsultaSaldoCuentaResponse;
 use AhorroLibre\STP\Lib\OrdenPago;
 use AhorroLibre\STP\Lib\STPService;
 
-class Tests extends PHPUnit_Framework_TestCase
+class Tests extends TestCase
 {
     /**
      * @test
