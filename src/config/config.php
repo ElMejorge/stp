@@ -25,7 +25,8 @@ return [
     |
     */
 
-    'ip_address' => env('COMPARTAMOS_DOMAIN'),
-    'port' => env('COMPARTAMOS_PORT'),
+    'ip_address' => env('STP_DOMAIN'),
+    'port' => env('STP_PORT'),
+    'path' => env('STP_PATH')
 
 ];

@@ -2,18 +2,40 @@
 
 namespace AhorroLibre\STP\Lib;
 
+use AhorroLibre\STP\STP;
+
 class OrdenPago
 {
-    private $fechaOperacion;
-    private $institucionOperante;
-    private $institucionContraparte;
-    private $claveRastreo;
+    // Not null values
+    /** @var string $empresa */
+    private $empresa;
+    /** @var string $conceptoPago */
+    private $conceptoPago;
+    /** @var string $cuentaBeneficiario */
+    private $cuentaBeneficiario;
+    /** @var int $referenciaNumerica */
+    private $referenciaNumerica;
+    /** @var float $monto */
     private $monto;
+    /** @var int $tipoCuentaBeneficiario */
+    private $tipoCuentaBeneficiario;
+    /** @var int $tipoPago */
     private $tipoPago;
+    /** @var int $institucionContraparte */
+    private $institucionContraparte;
+    /** @var string $nombreBeneficiario */
+    private $nombreBeneficiario;
+    /** @var string $institucionOperante */
+    private $institucionOperante;
+    /** @var int $iva */
+    private $iva;
+
+    // Optional values
+    private $fechaOperacion;
+    private $claveRastreo;
     private $topologia;
     private $prioridad;
     private $usuario;
-    private $empresa;
     private $tipoOperacion;
     private $causaDevolucion;
     private $claveRastreoDevolucion;
@@ -21,20 +43,14 @@ class OrdenPago
     private $tipoCuentaOrdenante;
     private $cuentaOrdenante;
     private $rfcCurpOrdenante;
-    private $nombreBeneficiario;
-    private $tipoCuentaBeneficiario;
-    private $cuentaBeneficiario;
     private $rfcCurpBeneficiario;
     private $nombreBeneficiario2;
     private $tipoCuentaBeneficiario2;
     private $cuentaBeneficiario2;
     private $rfcCurpBeneficiario2;
-    private $conceptoPago;
     private $conceptoPago2;
-    private $referenciaNumerica;
     private $clavePago;
     private $referenciaCobranza;
-    private $iva;
     private $medioEntrega;
     private $emailBeneficiario;
     private $claveCatUsuario1;
@@ -43,384 +59,722 @@ class OrdenPago
     private $estado;
     private $firma;
 
-    public function set_fechaOperacion($fechaOperacion)
-    {
-        $this->fechaOperacion = $fechaOperacion;
-    }
-
-    public function get_fechaOperacion()
-    {
-        return $this->fechaOperacion;
-    }
-
-    public function set_institucionOperante($institucionOperante)
-    {
-        $this->institucionOperante = $institucionOperante;
-    }
-
-    public function get_institucionOperante()
-    {
-        return $this->institucionOperante;
-    }
-
-    public function set_institucionContraparte($institucionContraparte)
-    {
-        $this->institucionContraparte = $institucionContraparte;
-    }
-
-    public function get_institucionContraparte()
-    {
-        return $this->institucionContraparte;
-    }
-
-    public function set_claveRastreo($claveRastreo)
-    {
-        $this->claveRastreo = $claveRastreo;
-    }
-
-    public function get_claveRastreo()
-    {
-        return $this->claveRastreo;
-    }
-
-    public function set_monto($monto)
-    {
+    /**
+     * OrdenPago constructor.
+     * @param string $conceptoPago
+     * @param string $cuentaBeneficiario
+     * @param int $referenciaNumerica
+     * @param float $monto
+     * @param int $tipoCuentaBeneficiario
+     * @param int $institucionContraparte
+     * @param string $nombreBeneficiario
+     * @param int $iva
+     */
+    public function __construct(
+        string $conceptoPago,
+        string $cuentaBeneficiario,
+        int $referenciaNumerica,
+        float $monto,
+        int $tipoCuentaBeneficiario,
+        int $institucionContraparte,
+        string $nombreBeneficiario,
+        int $iva
+    ) {
+        $this->empresa = \Config::get('stp.company-name');
+        $this->conceptoPago = $conceptoPago;
+        $this->cuentaBeneficiario = $cuentaBeneficiario;
+        $this->referenciaNumerica = $referenciaNumerica;
         $this->monto = $monto;
+        $this->tipoCuentaBeneficiario = $tipoCuentaBeneficiario;
+        $this->tipoPago = STP::PAGO_DEFAULT;
+        $this->institucionContraparte = $institucionContraparte;
+        $this->nombreBeneficiario = $nombreBeneficiario;
+        $this->institucionOperante = STP::PAGO_DEFAULT;
+        $this->iva = $iva;
     }
 
-    public function get_monto()
-    {
-        return $this->monto;
-    }
-
-    public function set_tipoPago($tipoPago)
-    {
-        $this->tipoPago = $tipoPago;
-    }
-
-    public function get_tipoPago()
-    {
-        return $this->tipoPago;
-    }
-
-    public function set_topologia($topologia)
-    {
-        $this->topologia = $topologia;
-    }
-
-    public function get_topologia()
-    {
-        return $this->topologia;
-    }
-
-    public function set_prioridad($prioridad)
-    {
-        $this->prioridad = $prioridad;
-    }
-
-    public function get_prioridad()
-    {
-        return $this->prioridad;
-    }
-
-    public function set_usuario($usuario)
-    {
-        $this->usuario = $usuario;
-    }
-
-    public function get_usuario()
-    {
-        return $this->usuario;
-    }
-
-    public function set_empresa($empresa)
-    {
-        $this->empresa = $empresa;
-    }
-
-    public function get_empresa()
+    /**
+     * @return string
+     */
+    public function getEmpresa(): string
     {
         return $this->empresa;
     }
 
-    public function set_tipoOperacion($tipoOperacion)
+    /**
+     * @param string $empresa
+     * @return OrdenPago
+     */
+    public function setEmpresa(string $empresa): OrdenPago
     {
-        $this->tipoOperacion = $tipoOperacion;
+        $this->empresa = $empresa;
+        return $this;
     }
 
-    public function get_tipoOperacion()
-    {
-        return $this->tipoOperacion;
-    }
-
-    public function set_causaDevolucion($causaDevolucion)
-    {
-        $this->causaDevolucion = $causaDevolucion;
-    }
-
-    public function get_causaDevolucion()
-    {
-        return $this->causaDevolucion;
-    }
-
-    public function set_claveRastreoDevolucion($claveRastreoDevolucion)
-    {
-        $this->claveRastreoDevolucion = $claveRastreoDevolucion;
-    }
-
-    public function get_claveRastreoDevolucion()
-    {
-        return $this->claveRastreoDevolucion;
-    }
-
-    public function set_nombreOrdenante($nombreOrdenante)
-    {
-        $this->nombreOrdenante = $nombreOrdenante;
-    }
-
-    public function get_nombreOrdenante()
-    {
-        return $this->nombreOrdenante;
-    }
-
-    public function set_tipoCuentaOrdenante($tipoCuentaOrdenante)
-    {
-        $this->tipoCuentaOrdenante = $tipoCuentaOrdenante;
-    }
-
-    public function get_tipoCuentaOrdenante()
-    {
-        return $this->tipoCuentaOrdenante;
-    }
-
-    public function set_cuentaOrdenante($cuentaOrdenante)
-    {
-        $this->cuentaOrdenante = $cuentaOrdenante;
-    }
-
-    public function get_cuentaOrdenante()
-    {
-        return $this->cuentaOrdenante;
-    }
-
-    public function set_rfcCurpOrdenante($rfcCurpOrdenante)
-    {
-        $this->rfcCurpOrdenante = $rfcCurpOrdenante;
-    }
-
-    public function get_rfcCurpOrdenante()
-    {
-        return $this->rfcCurpOrdenante;
-    }
-
-    public function set_nombreBeneficiario($nombreBeneficiario)
-    {
-        $this->nombreBeneficiario = $nombreBeneficiario;
-    }
-
-    public function get_nombreBeneficiario()
-    {
-        return $this->nombreBeneficiario;
-    }
-
-    public function set_tipoCuentaBeneficiario($tipoCuentaBeneficiario)
-    {
-        $this->tipoCuentaBeneficiario = $tipoCuentaBeneficiario;
-    }
-
-    public function get_tipoCuentaBeneficiario()
-    {
-        return $this->tipoCuentaBeneficiario;
-    }
-
-    public function set_cuentaBeneficiario($cuentaBeneficiario)
-    {
-        $this->cuentaBeneficiario = $cuentaBeneficiario;
-    }
-
-    public function get_cuentaBeneficiario()
-    {
-        return $this->cuentaBeneficiario;
-    }
-
-    public function set_rfcCurpBeneficiario($rfcCurpBeneficiario)
-    {
-        $this->rfcCurpBeneficiario = $rfcCurpBeneficiario;
-    }
-
-    public function get_rfcCurpBeneficiario()
-    {
-        return $this->rfcCurpBeneficiario;
-    }
-
-    public function set_nombreBeneficiario2($nombreBeneficiario2)
-    {
-        $this->nombreBeneficiario2 = $nombreBeneficiario2;
-    }
-
-    public function get_nombreBeneficiario2()
-    {
-        return $this->nombreBeneficiario2;
-    }
-
-    public function set_tipoCuentaBeneficiario2($tipoCuentaBeneficiario2)
-    {
-        $this->tipoCuentaBeneficiario2 = $tipoCuentaBeneficiario2;
-    }
-
-    public function get_tipoCuentaBeneficiario2()
-    {
-        return $this->tipoCuentaBeneficiario2;
-    }
-
-    public function set_cuentaBeneficiario2($cuentaBeneficiario2)
-    {
-        $this->cuentaBeneficiario2 = $cuentaBeneficiario2;
-    }
-
-    public function get_cuentaBeneficiario2()
-    {
-        return $this->cuentaBeneficiario2;
-    }
-
-    public function set_rfcCurpBeneficiario2($rfcCurpBeneficiario2)
-    {
-        $this->rfcCurpBeneficiario2 = $rfcCurpBeneficiario2;
-    }
-
-    public function get_rfcCurpBeneficiario2()
-    {
-        return $this->rfcCurpBeneficiario2;
-    }
-
-    public function set_conceptoPago($conceptoPago)
-    {
-        $this->conceptoPago = $conceptoPago;
-    }
-
-    public function get_conceptoPago()
+    /**
+     * @return string
+     */
+    public function getConceptoPago(): string
     {
         return $this->conceptoPago;
     }
 
-    public function set_conceptoPago2($conceptoPago2)
+    /**
+     * @param string $conceptoPago
+     * @return OrdenPago
+     */
+    public function setConceptoPago(string $conceptoPago): OrdenPago
     {
-        $this->conceptoPago2 = $conceptoPago2;
+        $this->conceptoPago = $conceptoPago;
+        return $this;
     }
 
-    public function get_conceptoPago2()
+    /**
+     * @return string
+     */
+    public function getCuentaBeneficiario(): string
     {
-        return $this->conceptoPago2;
+        return $this->cuentaBeneficiario;
     }
 
-    public function set_referenciaNumerica($referenciaNumerica)
+    /**
+     * @param string $cuentaBeneficiario
+     * @return OrdenPago
+     */
+    public function setCuentaBeneficiario(string $cuentaBeneficiario): OrdenPago
     {
-        $this->referenciaNumerica = $referenciaNumerica;
+        $this->cuentaBeneficiario = $cuentaBeneficiario;
+        return $this;
     }
 
-    public function get_referenciaNumerica()
+    /**
+     * @return int
+     */
+    public function getReferenciaNumerica(): int
     {
         return $this->referenciaNumerica;
     }
 
-    public function set_clavePago($clavePago)
+    /**
+     * @param int $referenciaNumerica
+     * @return OrdenPago
+     */
+    public function setReferenciaNumerica(int $referenciaNumerica): OrdenPago
     {
-        $this->clavePago = $clavePago;
+        $this->referenciaNumerica = $referenciaNumerica;
+        return $this;
     }
 
-    public function get_clavePago()
+    /**
+     * @return float
+     */
+    public function getMonto(): float
     {
-        return $this->clavePago;
+        return $this->monto;
     }
 
-    public function set_referenciaCobranza($referenciaCobranza)
+    /**
+     * @param float $monto
+     * @return OrdenPago
+     */
+    public function setMonto(float $monto): OrdenPago
     {
-        $this->referenciaCobranza = $referenciaCobranza;
+        $this->monto = $monto;
+        return $this;
     }
 
-    public function get_referenciaCobranza()
+    /**
+     * @return int
+     */
+    public function getTipoCuentaBeneficiario(): int
     {
-        return $this->referenciaCobranza;
+        return $this->tipoCuentaBeneficiario;
     }
 
-    public function set_iva($iva)
+    /**
+     * @param int $tipoCuentaBeneficiario
+     * @return OrdenPago
+     */
+    public function setTipoCuentaBeneficiario(int $tipoCuentaBeneficiario): OrdenPago
     {
-        $this->iva = $iva;
+        $this->tipoCuentaBeneficiario = $tipoCuentaBeneficiario;
+        return $this;
     }
 
-    public function get_iva()
+    /**
+     * @return int
+     */
+    public function getTipoPago(): int
+    {
+        return $this->tipoPago;
+    }
+
+    /**
+     * @param int $tipoPago
+     * @return OrdenPago
+     */
+    public function setTipoPago(int $tipoPago): OrdenPago
+    {
+        $this->tipoPago = $tipoPago;
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getInstitucionContraparte(): int
+    {
+        return $this->institucionContraparte;
+    }
+
+    /**
+     * @param int $institucionContraparte
+     * @return OrdenPago
+     */
+    public function setInstitucionContraparte(int $institucionContraparte): OrdenPago
+    {
+        $this->institucionContraparte = $institucionContraparte;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getNombreBeneficiario(): string
+    {
+        return $this->nombreBeneficiario;
+    }
+
+    /**
+     * @param string $nombreBeneficiario
+     * @return OrdenPago
+     */
+    public function setNombreBeneficiario(string $nombreBeneficiario): OrdenPago
+    {
+        $this->nombreBeneficiario = $nombreBeneficiario;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getInstitucionOperante(): string
+    {
+        return $this->institucionOperante;
+    }
+
+    /**
+     * @param string $institucionOperante
+     * @return OrdenPago
+     */
+    public function setInstitucionOperante(string $institucionOperante): OrdenPago
+    {
+        $this->institucionOperante = $institucionOperante;
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getIva(): int
     {
         return $this->iva;
     }
 
-    public function set_medioEntrega($medioEntrega)
+    /**
+     * @param int $iva
+     * @return OrdenPago
+     */
+    public function setIva(int $iva): OrdenPago
     {
-        $this->medioEntrega = $medioEntrega;
+        $this->iva = $iva;
+        return $this;
     }
 
-    public function get_medioEntrega()
+    /**
+     * @return mixed
+     */
+    public function getFechaOperacion()
+    {
+        return $this->fechaOperacion;
+    }
+
+    /**
+     * @param mixed $fechaOperacion
+     * @return OrdenPago
+     */
+    public function setFechaOperacion($fechaOperacion)
+    {
+        $this->fechaOperacion = $fechaOperacion;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getClaveRastreo()
+    {
+        return $this->claveRastreo;
+    }
+
+    /**
+     * @param mixed $claveRastreo
+     * @return OrdenPago
+     */
+    public function setClaveRastreo($claveRastreo)
+    {
+        $this->claveRastreo = $claveRastreo;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTopologia()
+    {
+        return $this->topologia;
+    }
+
+    /**
+     * @param mixed $topologia
+     * @return OrdenPago
+     */
+    public function setTopologia($topologia)
+    {
+        $this->topologia = $topologia;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPrioridad()
+    {
+        return $this->prioridad;
+    }
+
+    /**
+     * @param mixed $prioridad
+     * @return OrdenPago
+     */
+    public function setPrioridad($prioridad)
+    {
+        $this->prioridad = $prioridad;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUsuario()
+    {
+        return $this->usuario;
+    }
+
+    /**
+     * @param mixed $usuario
+     * @return OrdenPago
+     */
+    public function setUsuario($usuario)
+    {
+        $this->usuario = $usuario;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTipoOperacion()
+    {
+        return $this->tipoOperacion;
+    }
+
+    /**
+     * @param mixed $tipoOperacion
+     * @return OrdenPago
+     */
+    public function setTipoOperacion($tipoOperacion)
+    {
+        $this->tipoOperacion = $tipoOperacion;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCausaDevolucion()
+    {
+        return $this->causaDevolucion;
+    }
+
+    /**
+     * @param mixed $causaDevolucion
+     * @return OrdenPago
+     */
+    public function setCausaDevolucion($causaDevolucion)
+    {
+        $this->causaDevolucion = $causaDevolucion;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getClaveRastreoDevolucion()
+    {
+        return $this->claveRastreoDevolucion;
+    }
+
+    /**
+     * @param mixed $claveRastreoDevolucion
+     * @return OrdenPago
+     */
+    public function setClaveRastreoDevolucion($claveRastreoDevolucion)
+    {
+        $this->claveRastreoDevolucion = $claveRastreoDevolucion;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNombreOrdenante()
+    {
+        return $this->nombreOrdenante;
+    }
+
+    /**
+     * @param mixed $nombreOrdenante
+     * @return OrdenPago
+     */
+    public function setNombreOrdenante($nombreOrdenante)
+    {
+        $this->nombreOrdenante = $nombreOrdenante;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTipoCuentaOrdenante()
+    {
+        return $this->tipoCuentaOrdenante;
+    }
+
+    /**
+     * @param mixed $tipoCuentaOrdenante
+     * @return OrdenPago
+     */
+    public function setTipoCuentaOrdenante($tipoCuentaOrdenante)
+    {
+        $this->tipoCuentaOrdenante = $tipoCuentaOrdenante;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCuentaOrdenante()
+    {
+        return $this->cuentaOrdenante;
+    }
+
+    /**
+     * @param mixed $cuentaOrdenante
+     * @return OrdenPago
+     */
+    public function setCuentaOrdenante($cuentaOrdenante)
+    {
+        $this->cuentaOrdenante = $cuentaOrdenante;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRfcCurpOrdenante()
+    {
+        return $this->rfcCurpOrdenante;
+    }
+
+    /**
+     * @param mixed $rfcCurpOrdenante
+     * @return OrdenPago
+     */
+    public function setRfcCurpOrdenante($rfcCurpOrdenante)
+    {
+        $this->rfcCurpOrdenante = $rfcCurpOrdenante;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRfcCurpBeneficiario()
+    {
+        return $this->rfcCurpBeneficiario;
+    }
+
+    /**
+     * @param mixed $rfcCurpBeneficiario
+     * @return OrdenPago
+     */
+    public function setRfcCurpBeneficiario($rfcCurpBeneficiario)
+    {
+        $this->rfcCurpBeneficiario = $rfcCurpBeneficiario;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNombreBeneficiario2()
+    {
+        return $this->nombreBeneficiario2;
+    }
+
+    /**
+     * @param mixed $nombreBeneficiario2
+     * @return OrdenPago
+     */
+    public function setNombreBeneficiario2($nombreBeneficiario2)
+    {
+        $this->nombreBeneficiario2 = $nombreBeneficiario2;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTipoCuentaBeneficiario2()
+    {
+        return $this->tipoCuentaBeneficiario2;
+    }
+
+    /**
+     * @param mixed $tipoCuentaBeneficiario2
+     * @return OrdenPago
+     */
+    public function setTipoCuentaBeneficiario2($tipoCuentaBeneficiario2)
+    {
+        $this->tipoCuentaBeneficiario2 = $tipoCuentaBeneficiario2;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCuentaBeneficiario2()
+    {
+        return $this->cuentaBeneficiario2;
+    }
+
+    /**
+     * @param mixed $cuentaBeneficiario2
+     * @return OrdenPago
+     */
+    public function setCuentaBeneficiario2($cuentaBeneficiario2)
+    {
+        $this->cuentaBeneficiario2 = $cuentaBeneficiario2;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRfcCurpBeneficiario2()
+    {
+        return $this->rfcCurpBeneficiario2;
+    }
+
+    /**
+     * @param mixed $rfcCurpBeneficiario2
+     * @return OrdenPago
+     */
+    public function setRfcCurpBeneficiario2($rfcCurpBeneficiario2)
+    {
+        $this->rfcCurpBeneficiario2 = $rfcCurpBeneficiario2;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getConceptoPago2()
+    {
+        return $this->conceptoPago2;
+    }
+
+    /**
+     * @param mixed $conceptoPago2
+     * @return OrdenPago
+     */
+    public function setConceptoPago2($conceptoPago2)
+    {
+        $this->conceptoPago2 = $conceptoPago2;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getClavePago()
+    {
+        return $this->clavePago;
+    }
+
+    /**
+     * @param mixed $clavePago
+     * @return OrdenPago
+     */
+    public function setClavePago($clavePago)
+    {
+        $this->clavePago = $clavePago;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getReferenciaCobranza()
+    {
+        return $this->referenciaCobranza;
+    }
+
+    /**
+     * @param mixed $referenciaCobranza
+     * @return OrdenPago
+     */
+    public function setReferenciaCobranza($referenciaCobranza)
+    {
+        $this->referenciaCobranza = $referenciaCobranza;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMedioEntrega()
     {
         return $this->medioEntrega;
     }
 
-    public function set_emailBeneficiario($emailBeneficiario)
+    /**
+     * @param mixed $medioEntrega
+     * @return OrdenPago
+     */
+    public function setMedioEntrega($medioEntrega)
     {
-        $this->emailBeneficiario = $emailBeneficiario;
+        $this->medioEntrega = $medioEntrega;
+        return $this;
     }
 
-    public function get_emailBeneficiario()
+    /**
+     * @return mixed
+     */
+    public function getEmailBeneficiario()
     {
         return $this->emailBeneficiario;
     }
 
-    public function set_claveCatUsuario1($claveCatUsuario1)
+    /**
+     * @param mixed $emailBeneficiario
+     * @return OrdenPago
+     */
+    public function setEmailBeneficiario($emailBeneficiario)
     {
-        $this->claveCatUsuario1 = $claveCatUsuario1;
+        $this->emailBeneficiario = $emailBeneficiario;
+        return $this;
     }
 
-    public function get_claveCatUsuario1()
+    /**
+     * @return mixed
+     */
+    public function getClaveCatUsuario1()
     {
         return $this->claveCatUsuario1;
     }
 
-    public function set_claveCatUsuario2($claveCatUsuario2)
+    /**
+     * @param mixed $claveCatUsuario1
+     * @return OrdenPago
+     */
+    public function setClaveCatUsuario1($claveCatUsuario1)
     {
-        $this->claveCatUsuario2 = $claveCatUsuario2;
+        $this->claveCatUsuario1 = $claveCatUsuario1;
+        return $this;
     }
 
-    public function get_claveCatUsuario2()
+    /**
+     * @return mixed
+     */
+    public function getClaveCatUsuario2()
     {
         return $this->claveCatUsuario2;
     }
 
-    public function set_folioOrigen($folioOrigen)
+    /**
+     * @param mixed $claveCatUsuario2
+     * @return OrdenPago
+     */
+    public function setClaveCatUsuario2($claveCatUsuario2)
     {
-        $this->folioOrigen = $folioOrigen;
+        $this->claveCatUsuario2 = $claveCatUsuario2;
+        return $this;
     }
 
-    public function get_folioOrigen()
+    /**
+     * @return mixed
+     */
+    public function getFolioOrigen()
     {
         return $this->folioOrigen;
     }
 
-    public function set_estado($estado)
+    /**
+     * @param mixed $folioOrigen
+     * @return OrdenPago
+     */
+    public function setFolioOrigen($folioOrigen)
     {
-        $this->estado = $estado;
+        $this->folioOrigen = $folioOrigen;
+        return $this;
     }
 
-    public function get_estado()
+    /**
+     * @return mixed
+     */
+    public function getEstado()
     {
         return $this->estado;
     }
 
-    public function set_firma($firma)
+    /**
+     * @param mixed $estado
+     * @return OrdenPago
+     */
+    public function setEstado($estado)
     {
-        $this->firma = $firma;
+        $this->estado = $estado;
+        return $this;
     }
 
-    public function get_firma()
+    /**
+     * @return mixed
+     */
+    public function getFirma()
     {
         return $this->firma;
+    }
+
+    /**
+     * @param mixed $firma
+     * @return OrdenPago
+     */
+    public function setFirma($firma)
+    {
+        $this->firma = $firma;
+        return $this;
     }
 
     public function _getDataToSign()

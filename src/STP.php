@@ -2,7 +2,7 @@
 
 namespace AhorroLibre\STP;
 
-use AhorroLibre\STP\Data\RegistraOrdenResponse;
+use AhorroLibre\STP\Data\OrdenResponse;
 use AhorroLibre\STP\Data\RegistraOrdenData;
 use AhorroLibre\STP\Data\ConsultaCEPResponse;
 use AhorroLibre\STP\Data\ConsultaCEPData;
@@ -19,39 +19,32 @@ use AhorroLibre\STP\Lib\STPService;
  */
 class STP
 {
+    const CUENTA_CLABE = 40;
+    const CUENTA_TARJETA = 3;
+
+    const PAGO_DEFAULT = 1;
+
+    const INSTITUCION_STP = 90646;
+
+    private $pemFile;
+
+    private $pass;
+
+    public function __construct()
+    {
+        $this->pemFile = \Config::get('stp.pem-file');
+        $this->pass = \Config::get('stp.pem-password');
+    }
+
     /**
      * TODO
-     * @param RegistraOrdenData $data
-     * @return RegistraOrdenResponse
+     * @param OrdenPago $orden
+     * @return OrdenResponse
      */
-    public static function registraOrden(RegistraOrdenData $data) : RegistraOrdenResponse
+    public function registraOrden(OrdenPago $orden) : OrdenResponse
     {
-        $data = new OrdenPago();
-
-        $data->set_empresa(\Config::get('stp.company-name'));
-//        $data->set_claveRastreo("IACH0OEE80003");
-        $data->set_conceptoPago("SWI_SPEI_Payment");
-        $data->set_cuentaBeneficiario("110180077000000018");
-        $data->set_cuentaOrdenante("846180000050000011");
-        $data->set_referenciaNumerica(2);
-        $data->set_monto(1000.82);
-        $data->set_tipoCuentaBeneficiario(40);
-        $data->set_tipoPago(1);
-        $data->set_institucionContraparte(40131);
-        $data->set_nombreBeneficiario("alfredo");
-        $data->set_institucionOperante(90646);
-        $data->set_iva(16);
-        $data->set_nombreOrdenante("Juan Lopez");
-        $data->set_rfcCurpBeneficiario("RFCBEN");
-        $data->set_rfcCurpOrdenante("RFCORD");
-        $data->set_tipoCuentaOrdenante(3);
-
-        $pemFile = \Config::get('stp.pem-file');
-        $passphrase = \Config::get('stp.pem-password');
-
-        STPService::registraOrden($data, $pemFile, $passphrase);
-
-        return new RegistraOrdenResponse();
+        $result = STPService::registraOrden($orden, $this->pemFile, $this->pass);
+        return $this->transformResponse($result);
     }
 
     /**
@@ -72,5 +65,15 @@ class STP
     public static function consultaSaldoCuenta(ConsultaSaldoCuentaData $data) : ConsultaSaldoCuentaResponse
     {
         return new ConsultaSaldoCuentaResponse();
+    }
+
+    private function transformResponse(array $response): OrdenResponse
+    {
+        $id = $response['return']['id'];
+        $error = null;
+        if (isset($response['return']['descriptionError'])) {
+            $error = $response['return']['descriptionError'];
+        }
+        return new OrdenResponse($id, $error);
     }
 }

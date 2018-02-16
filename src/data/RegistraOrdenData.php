@@ -7,48 +7,6 @@ class RegistraOrdenData
     /** @var string */
     private $cuentaBeneficiario;
 
-    /** @var string */
-    private $cuentaOrdenante;
-
-    /** @var string */
-    private $emailBeneficiario;
-
-    /** @var string */
-    private $fechaOperacion;
-
-    /** @var string */
-    private $folioOrigen;
-
-    /** @var string */
-    private $nombreBeneficiario;
-
-    /** @var string */
-    private $nombreOrdenante;
-
-    /** @var string */
-    private $rfcCurpBeneficiario;
-
-    /** @var string */
-    private $rfcCurpOrdenante;
-
-    /** @var int */
-    private $tipoCuentaBeneficiario;
-
-    /** @var int */
-    private $tipoCuentaOrdenante;
-
-    /** @var string */
-    private $claveRastreo;
-
-    /** @var string */
-    private $conceptoPago;
-
-    /** @var string */
-    private $empresa;
-
-    /** @var string */
-    private $firma;
-
     /** @var int */
     private $institucionOperante;
 
@@ -63,6 +21,91 @@ class RegistraOrdenData
 
     /** @var int */
     private $tipoPago;
+
+    /** @var int $iva */
+    private $iva;
+
+    /** @var string */
+    private $nombreBeneficiario;
+
+    /** @var int */
+    private $tipoCuentaBeneficiario;
+
+    /** @var string */
+    private $conceptoPago;
+
+    /** @var string */
+    private $empresa;
+
+    /** @var string|null */
+    private $cuentaOrdenante;
+
+    /** @var string|null */
+    private $emailBeneficiario;
+
+    /** @var string|null */
+    private $fechaOperacion;
+
+    /** @var string|null */
+    private $folioOrigen;
+
+    /** @var string|null */
+    private $nombreOrdenante;
+
+    /** @var string|null */
+    private $rfcCurpBeneficiario;
+
+    /** @var string|null */
+    private $rfcCurpOrdenante;
+
+    /** @var int|null */
+    private $tipoCuentaOrdenante;
+
+    /** @var string|null */
+    private $claveRastreo;
+
+    /** @var string|null */
+    private $firma;
+
+    /**
+     * OrdenPago constructor.
+     * @param string $empresa
+     * @param string $conceptoPago
+     * @param string $cuentaBeneficiario
+     * @param int $referenciaNumerica
+     * @param float $monto
+     * @param int $tipoCuentaBeneficiario
+     * @param int $tipoPago
+     * @param int $institucionContraparte
+     * @param string $nombreBeneficiario
+     * @param string $institucionOperante
+     * @param int $iva
+     */
+    public function __construct(
+        string $empresa,
+        string $conceptoPago,
+        string $cuentaBeneficiario,
+        int $referenciaNumerica,
+        float $monto,
+        int $tipoCuentaBeneficiario,
+        int $tipoPago,
+        int $institucionContraparte,
+        string $nombreBeneficiario,
+        string $institucionOperante,
+        int $iva
+    ) {
+        $this->empresa = $empresa;
+        $this->conceptoPago = $conceptoPago;
+        $this->cuentaBeneficiario = $cuentaBeneficiario;
+        $this->referenciaNumerica = $referenciaNumerica;
+        $this->monto = $monto;
+        $this->tipoCuentaBeneficiario = $tipoCuentaBeneficiario;
+        $this->tipoPago = $tipoPago;
+        $this->institucionContraparte = $institucionContraparte;
+        $this->nombreBeneficiario = $nombreBeneficiario;
+        $this->institucionOperante = $institucionOperante;
+        $this->iva = $iva;
+    }
 
     /**
      * @return string
@@ -103,7 +146,7 @@ class RegistraOrdenData
     /**
      * @return string
      */
-    public function getRfcCurpBeneficiario(): string
+    public function getRfcCurpBeneficiario(): ?string
     {
         return $this->rfcCurpBeneficiario;
     }
@@ -112,7 +155,7 @@ class RegistraOrdenData
      * @param string $rfcCurpBeneficiario
      * @return RegistraOrdenData
      */
-    public function setRfcCurpBeneficiario(string $rfcCurpBeneficiario): RegistraOrdenData
+    public function setRfcCurpBeneficiario(?string $rfcCurpBeneficiario): RegistraOrdenData
     {
         $this->rfcCurpBeneficiario = $rfcCurpBeneficiario;
         return $this;
@@ -139,7 +182,7 @@ class RegistraOrdenData
     /**
      * @return string
      */
-    public function getClaveRastreo(): string
+    public function getClaveRastreo(): ?string
     {
         return $this->claveRastreo;
     }
@@ -148,7 +191,7 @@ class RegistraOrdenData
      * @param string $claveRastreo
      * @return RegistraOrdenData
      */
-    public function setClaveRastreo(string $claveRastreo): RegistraOrdenData
+    public function setClaveRastreo(?string $claveRastreo): RegistraOrdenData
     {
         $this->claveRastreo = $claveRastreo;
         return $this;
@@ -193,7 +236,7 @@ class RegistraOrdenData
     /**
      * @return string
      */
-    public function getFirma(): string
+    public function getFirma(): ?string
     {
         return $this->firma;
     }
@@ -202,7 +245,7 @@ class RegistraOrdenData
      * @param string $firma
      * @return RegistraOrdenData
      */
-    public function setFirma(string $firma): RegistraOrdenData
+    public function setFirma(?string $firma): RegistraOrdenData
     {
         $this->firma = $firma;
         return $this;
@@ -382,7 +425,7 @@ class RegistraOrdenData
      * @param string $nombreOrdenante
      * @return RegistraOrdenData
      */
-    public function setNombreOrdenante(string $nombreOrdenante): RegistraOrdenData
+    public function setNombreOrdenante(?string $nombreOrdenante): RegistraOrdenData
     {
         $this->nombreOrdenante = $nombreOrdenante;
         return $this;
@@ -400,7 +443,7 @@ class RegistraOrdenData
      * @param string $rfcCurpOrdenante
      * @return RegistraOrdenData
      */
-    public function setRfcCurpOrdenante(string $rfcCurpOrdenante): RegistraOrdenData
+    public function setRfcCurpOrdenante(?string $rfcCurpOrdenante): RegistraOrdenData
     {
         $this->rfcCurpOrdenante = $rfcCurpOrdenante;
         return $this;
@@ -418,9 +461,27 @@ class RegistraOrdenData
      * @param int $tipoCuentaOrdenante
      * @return RegistraOrdenData
      */
-    public function setTipoCuentaOrdenante(int $tipoCuentaOrdenante): RegistraOrdenData
+    public function setTipoCuentaOrdenante(?int $tipoCuentaOrdenante): RegistraOrdenData
     {
         $this->tipoCuentaOrdenante = $tipoCuentaOrdenante;
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getIva(): int
+    {
+        return $this->iva;
+    }
+
+    /**
+     * @param int $iva
+     * @return RegistraOrdenData
+     */
+    public function setIva(int $iva): RegistraOrdenData
+    {
+        $this->iva = $iva;
         return $this;
     }
 }
