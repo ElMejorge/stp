@@ -24,7 +24,7 @@ class STP
      * @param RegistraOrdenData $data
      * @return RegistraOrdenResponse
      */
-    public static function registraOrden(RegistraOrdenData $data) : RegistraOrdenResponse
+    public function registraOrden(RegistraOrdenData $data) : RegistraOrdenResponse
     {
         $data = new OrdenPago();
 
@@ -49,9 +49,8 @@ class STP
         $pemFile = \Config::get('stp.pem-file');
         $passphrase = \Config::get('stp.pem-password');
 
-        STPService::registraOrden($data, $pemFile, $passphrase);
-
-        return new RegistraOrdenResponse();
+        $result = STPService::registraOrden($data, $pemFile, $passphrase);
+        return $this->transformResponse($result);
     }
 
     /**
@@ -72,5 +71,15 @@ class STP
     public static function consultaSaldoCuenta(ConsultaSaldoCuentaData $data) : ConsultaSaldoCuentaResponse
     {
         return new ConsultaSaldoCuentaResponse();
+    }
+
+    private function transformResponse(array $response): RegistraOrdenResponse
+    {
+        $id = $response['return']['id'];
+        $error = null;
+        if (isset($response['return']['descriptionError'])) {
+            $error = $response['return']['descriptionError'];
+        }
+        return new RegistraOrdenResponse($id, $error);
     }
 }

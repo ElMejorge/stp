@@ -4,8 +4,23 @@ namespace AhorroLibre\STP\Data;
 
 class RegistraOrdenResponse
 {
-    /** @var string */
+    /** @var string $id */
     private $id;
+
+    /** @var bool $isError */
+    private $isError = false;
+
+    /** @var string|null $descriptionError */
+    private $descriptionError;
+
+    public function __construct(string $id, ?string $descriptionError)
+    {
+        $this->id = $id;
+        if ($id == 0) {
+            $this->isError = true;
+        }
+        $this->descriptionError = $descriptionError;
+    }
 
     /**
      * @return string
@@ -16,12 +31,18 @@ class RegistraOrdenResponse
     }
 
     /**
-     * @param string $id
-     * @return RegistraOrdenResponse
+     * @return bool
      */
-    public function setId(string $id): RegistraOrdenResponse
+    public function isError(): bool
     {
-        $this->id = $id;
-        return $this;
+        return $this->isError;
+    }
+
+    /**
+     * @return null|string
+     */
+    public function getDescriptionError(): ?string
+    {
+        return $this->descriptionError;
     }
 }

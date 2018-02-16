@@ -22,6 +22,9 @@ class Tests extends TestCase
         $response = $stp->registraOrden(new RegistraOrdenData());
 
         $this->assertInstanceOf(RegistraOrdenResponse::class, $response);
+        $this->assertNotEquals(0, $response->getId());
+        $this->assertFalse($response->isError());
+        $this->assertNull($response->getDescriptionError());
     }
 
     /**

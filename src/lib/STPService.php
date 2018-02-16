@@ -8,14 +8,14 @@ use AhorroLibre\STP\Lib\nusoap_client;
 
 class STPService
 {
-    public static function registraOrden(OrdenPago $data, $pemFile, $passphrase)
+    public static function registraOrden(OrdenPago $data, $pemFile, $passphrase): array
     {
         $proxyhost = isset($_POST['proxyhost']) ? $_POST['proxyhost'] : '';
         $proxyport = isset($_POST['proxyport']) ? $_POST['proxyport'] : '';
         $proxyusername = isset($_POST['proxyusername']) ? $_POST['proxyusername'] : '';
         $proxypassword = isset($_POST['proxypassword']) ? $_POST['proxypassword'] : '';
 
-        $wsURL =  \Config::get('stp.ip_address') . ':' . \Config::get('stp.port') .  '/speidemo/webservices/SpeiServices?WSDL';
+        $wsURL =  \Config::get('stp.ip_address') . ':' . \Config::get('stp.port') .  '/'. \Config::get('stp.path');
 
         $client = new nusoap_client($wsURL, 'wsdl', $proxyhost, $proxyport, $proxyusername, $proxypassword);
         $client->soap_defencoding = 'UTF-8';
@@ -86,12 +86,16 @@ class STPService
                 echo '<h2>Error</h2><pre>' . $err . '</pre>';
             } else {
                 echo '<h2>Result</h2><pre>';
-                print_r($result);
+//                print_r($result);
                 echo '</pre>';
             }
         }
-        echo '<h2>Request</h2><pre>' . htmlspecialchars($client->request, ENT_QUOTES) . '</pre>';
-        echo '<h2>Response</h2><pre>' . htmlspecialchars($client->response, ENT_QUOTES) . '</pre>';
+
+
+        return $result;
+//        dd($response);
+//        echo '<h2>Request</h2><pre>' . htmlspecialchars($client->request, ENT_QUOTES) . '</pre>';
+//        echo '<h2>Response</h2><pre>' . htmlspecialchars($client->parseResponse($client->responseHeaders, $client->response), ENT_QUOTES) . '</pre>';
     }
 
 }
