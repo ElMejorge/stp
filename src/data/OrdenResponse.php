@@ -2,7 +2,7 @@
 
 namespace AhorroLibre\STP\Data;
 
-class RegistraOrdenResponse
+class OrdenResponse
 {
     /** @var string $id */
     private $id;

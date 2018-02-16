@@ -2,7 +2,7 @@
 
 use AhorroLibre\STP\STP;
 use AhorroLibre\STP\Data\RegistraOrdenData;
-use AhorroLibre\STP\Data\RegistraOrdenResponse;
+use AhorroLibre\STP\Data\OrdenResponse;
 use AhorroLibre\STP\Data\ConsultaCEPData;
 use AhorroLibre\STP\Data\ConsultaSaldoCuentaData;
 use AhorroLibre\STP\Data\ConsultaSaldoCuentaResponse;
@@ -19,9 +19,18 @@ class Tests extends TestCase
     {
         $stp = new STP();
 
-        $response = $stp->registraOrden(new RegistraOrdenData());
+        $response = $stp->registraOrden(new OrdenPago(
+            'Pago de prueba',
+            '110180077000000018',
+            2,
+            1000.00,
+            STP::CUENTA_CLABE,
+            40131,
+            'Juan',
+            16
+        ));
 
-        $this->assertInstanceOf(RegistraOrdenResponse::class, $response);
+        $this->assertInstanceOf(OrdenResponse::class, $response);
         $this->assertNotEquals(0, $response->getId());
         $this->assertFalse($response->isError());
         $this->assertNull($response->getDescriptionError());
