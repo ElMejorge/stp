@@ -7,7 +7,6 @@ use AhorroLibre\STP\Data\ConsultaCEPData;
 use AhorroLibre\STP\Data\ConsultaSaldoCuentaData;
 use AhorroLibre\STP\Data\ConsultaSaldoCuentaResponse;
 use AhorroLibre\STP\Lib\OrdenPago;
-use AhorroLibre\STP\Lib\STPService;
 
 class Tests extends TestCase
 {
