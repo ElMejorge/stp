@@ -89,7 +89,7 @@ class OrdenPago
         $this->tipoPago = STP::PAGO_DEFAULT;
         $this->institucionContraparte = $institucionContraparte;
         $this->nombreBeneficiario = $nombreBeneficiario;
-        $this->institucionOperante = STP::PAGO_DEFAULT;
+        $this->institucionOperante = STP::INSTITUCION_STP;
         $this->iva = $iva;
     }
 
